@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery Bairro</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- MENU LATERAL -->
+        <aside id="menu">
+            <h2 class="menu-titulo">Delivery</h2>
+
+            <button class="menu-btn ativo" data-alvo="inicio" onclick="mostrarSecao('inicio', this)">
+                🏠 Início
+            </button>
+            <button class="menu-btn" data-alvo="produtos" onclick="mostrarSecao('produtos', this)">
+                🛒 Produtos
+            </button>
+            <button class="menu-btn" data-alvo="pedido" onclick="mostrarSecao('pedido', this)">
+                📦 Meu Pedido
+            </button>
+
+            <hr />
+
+            <button onclick="toggleDarkMode()">🌙 / ☀️ Tema</button>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main id="conteudo">
+            <!-- INÍCIO -->
+            <section id="inicio" class="secao ativa">
+                <header class="topo">
+                    <h1>Delivery Bairro</h1>
+                    <p>Água • Gás • Itens essenciais (exemplo)</p>
+                </header>
+
+                <div class="card">
+                    <h2>Sobre o serviço</h2>
+                    <p>
+                        Este é um projeto de exemplo para portfólio. A ideia é simular
+                        um pequeno delivery de água e gás, com agendamento de entrega,
+                        cálculo de total e envio do pedido via WhatsApp.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Localização (exemplo)</h2>
+                    <p>Estamos localizados em uma região genérica do bairro Central.</p>
+                    <a class="btn-whats" style="display:inline-block; margin-top:8px;" href="https://maps.google.com"
+                        target="_blank" rel="noreferrer">
+                        📍 Ver no Google Maps
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h2>Contato (fictício)</h2>
+                    <p><strong>Telefones:</strong></p>
+                    <p><a href="tel:+5511999990000">(11) 99999-0000</a></p>
+                    <p><a href="https://wa.me/5511999990000" target="_blank" rel="noreferrer">
+                            (11) 99999-0000 (WhatsApp)
+                        </a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Horário de funcionamento</h2>
+                    <ul>
+                        <li>Segunda a sábado: <strong>07:30 às 18:30</strong> (entregas)</li>
+                        <li>Domingos e feriados: <strong>07:30 às 12:00</strong></li>
+                        <li>Intervalo de almoço: <strong>12:00 às 14:00</strong> (somente agendamento)</li>
+                    </ul>
+                    <p id="statusLoja" class="status-loja"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Pedir direto pelo WhatsApp</h2>
+                    <p>Clique abaixo para abrir uma conversa com o delivery (número fictício):</p>
+                    <a href="https://wa.me/5511999990000" target="_blank" rel="noreferrer" class="btn-whats">
+                        📲 Falar no WhatsApp
+                    </a>
+                </div>
+            </section>
+
+            <!-- PRODUTOS -->
+            <section id="produtos" class="secao">
+                <h2>Produtos para entrega</h2>
+                <p class="texto-explicacao">
+                    Atendemos apenas por entrega via site (exemplo). Para retirada, o cliente
+                    poderia entrar em contato direto por telefone ou WhatsApp.
+                </p>
+
+                <p id="mensagemAdicao" class="mensagem-adicao"></p>
+
+                <div id="lista-produtos" class="produto-lista"></div>
+            </section>
+
+            <!-- PEDIDO -->
+            <section id="pedido" class="secao">
+                <h2>Meu pedido</h2>
+
+                <div id="carrinho-vazio" class="card">Seu carrinho está vazio.</div>
+                <div id="carrinho-itens"></div>
+                <p id="carrinho-total" class="total"></p>
+
+                <div class="card">
+                    <h3>Dados do cliente e endereço</h3>
+
+                    <label for="nomeCliente">Seu nome:</label>
+                    <input type="text" id="nomeCliente" placeholder="Ex: Ana, João">
+
+                    <label for="telefoneCliente">Seu telefone:</label>
+                    <input type="tel" id="telefoneCliente" placeholder="Ex: 11999990000">
+
+                    <label for="bairro">Bairro (exemplo):</label>
+                    <select id="bairro">
+                        <option value="">Selecione…</option>
+                        <option value="Bairro Central">Bairro Central</option>
+                        <option value="Jardim das Flores">Jardim das Flores</option>
+                        <option value="Vila Exemplo">Vila Exemplo</option>
+                        <option value="Parque das Árvores">Parque das Árvores</option>
+                    </select>
+
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" placeholder="Ex: Rua das Palmeiras">
+
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" placeholder="Ex: 123">
+
+                    <label for="referencia">Ponto de referência (opcional):</label>
+                    <input type="text" id="referencia" placeholder="Ex: Casa com portão azul">
+                </div>
+
+                <div class="card">
+                    <h3>Forma de pagamento</h3>
+
+                    <label for="pagamento">Escolha a forma de pagamento:</label>
+                    <select id="pagamento">
+                        <option value="">Selecione…</option>
+                        <option value="PIX">PIX</option>
+                        <option value="PIX QRCode">PIX QRCode</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Débito">Cartão de Débito</option>
+                        <option value="Crédito">Cartão de Crédito</option>
+                    </select>
+
+                    <div id="troco-container" style="display:none;">
+                        <label for="troco">Troco para quanto?</label>
+                        <input type="text" id="troco" placeholder="Ex: 100,00">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Agendamento</h3>
+                    <p id="textoAgendamento"></p>
+
+                    <label for="agendamentoData">Escolha o dia:</label>
+                    <input type="date" id="agendamentoData">
+
+                    <label for="agendamentoHora" class="subtitulo-horarios">Escolha o horário:</label>
+                    <select id="agendamentoHora">
+                        <option value="">Selecione um horário</option>
+                    </select>
+                </div>
+
+                <button class="btn-finalizar" onclick="finalizarPedido()">📲 Enviar pedido pelo WhatsApp</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL PIX -->
+    <div id="pixModal" class="modal-pix">
+        <div class="modal-pix-content">
+            <h3>Pagamento via PIX (exemplo)</h3>
+            <p><strong>Chave PIX:</strong> <span id="pixChave">00000000000</span></p>
+            <p><strong>Valor total:</strong> <span id="pixValor"></span></p>
+            <p class="modal-pix-info">
+                Copie a chave PIX fictícia, simule o pagamento e depois clique em
+                "Continuar para o WhatsApp" para enviar o pedido.
+            </p>
+            <div class="modal-pix-buttons">
+                <button type="button" onclick="copiarChavePix()">Copiar chave PIX</button>
+                <button type="button" onclick="continuarPixWhats()">Continuar para o WhatsApp</button>
+                <button type="button" class="modal-pix-fechar" onclick="fecharPixModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP DE CADASTRO (EXEMPLO) -->
+    <div id="popupCadastro" class="popup-overlay">
+        <div class="popup-box">
+            <h2>Cadastro rápido (exemplo)</h2>
+            <p class="popup-desc">
+                Este cadastro é apenas para demonstrar o uso de localStorage no navegador.
+            </p>
+
+            <label>Seu nome:</label>
+            <input type="text" id="cadNome" placeholder="Ex: Ana, João">
+
+            <label>Seu telefone:</label>
+            <input type="tel" id="cadTelefone" placeholder="Ex: 11999990000">
+
+            <label>Bairro:</label>
+            <select id="cadBairro">
+                <option value="">Selecione...</option>
+                <option value="Bairro Central">Bairro Central</option>
+                <option value="Jardim das Flores">Jardim das Flores</option>
+                <option value="Vila Exemplo">Vila Exemplo</option>
+                <option value="Parque das Árvores">Parque das Árvores</option>
+            </select>
+
+            <label>Rua:</label>
+            <input type="text" id="cadRua" placeholder="Ex: Rua de Demonstração">
+
+            <label>Número:</label>
+            <input type="text" id="cadNumero" placeholder="Ex: 123">
+
+            <label>Ponto de referência (opcional):</label>
+            <input type="text" id="cadReferencia" placeholder="Ex: Casa com jardim">
+
+            <button id="btnSalvarCadastro" class="btn-add" style="margin-top:10px;">
+                Concluir cadastro
+            </button>
+
+            <button id="btnApagarCadastro" class="btn-apagar" style="margin-top:10px;">
+                Apagar cadastro salvo
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
