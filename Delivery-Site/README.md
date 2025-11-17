@@ -19,9 +19,10 @@ Não representa nenhuma empresa real.
 
 Caso queira trocar ideias ou perguntar algo:
 
-**Email:** seu-email-ficticio@example.com  
-**GitHub:** https://github.com/seu-usuario  
+**Email:** thalialimeira@hotmail.com 
+**GitHub:** https://github.com/ThaliaYpe
 
 ---
 
 Feito com ❤️ para aprender, evoluir e demonstrar habilidades.
+
