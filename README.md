@@ -63,7 +63,7 @@ O desenvolvimento contou com apoio de IA (ChatGPT) como ferramenta auxiliar para
 
 ---
 
-###👩‍💻 Autora
+##👩‍💻 Autora
 
 Thalia Vitória Limeira
 📧 E-mail: thalialimeira@hotmail.com
