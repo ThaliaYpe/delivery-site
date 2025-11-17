@@ -62,13 +62,11 @@ O desenvolvimento contou com apoio de IA (ChatGPT) como ferramenta auxiliar para
    Não é necessário servidor backend ou dependências externas.
 
 ---
-👩‍💻 Autora
+##👩‍💻 Autora
 
 Thalia Vitória Limeira
 📧 E-mail: thalialimeira@hotmail.com
-
 🐙 GitHub: https://github.com/ThaliaYpe
-
 💼 LinkedIn: https://linkedin.com/in/thalialimeira0204
 ---
 ## 📄 Licença
