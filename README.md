@@ -62,16 +62,19 @@ O desenvolvimento contou com apoio de IA (ChatGPT) como ferramenta auxiliar para
    Não é necessário servidor backend ou dependências externas.
 
 ---
-##👩‍💻 Autora
+
+###👩‍💻 Autora
 
 Thalia Vitória Limeira
 📧 E-mail: thalialimeira@hotmail.com
 🐙 GitHub: https://github.com/ThaliaYpe
 💼 LinkedIn: https://linkedin.com/in/thalialimeira0204
+
 ---
+
 ## 📄 Licença
 
-Este projeto está sob a Licença MIT.
+Este projeto está sob a **Licença MIT**.
 Isso significa que você pode usar, copiar e modificar o código com liberdade, desde que mantenha os créditos.
 ---
 Feito com ❤️ para aprender, evoluir e demonstrar habilidades profissionais em desenvolvimento front-end.
