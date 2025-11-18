@@ -1,8 +1,8 @@
 # 🛒 Delivery Site
 
-Aplicação web fictícia desenvolvida com o objetivo de compor portfólio e demonstrar domínio de **HTML**, **CSS** e **JavaScript** em um projeto front-end completo.
+Aplicação web desenvolvida com base em uma demanda real de uma empresa, com o objetivo de praticar e demonstrar habilidades em HTML, CSS e JavaScript em um projeto front-end completo.
 
-🔗 **Acesse o projeto:**https://delivery-site-thalia.netlify.app
+🔗 **Acesse o projeto:**https://thaliaype.github.io/delivery-site/
 
 ---
 
@@ -27,7 +27,7 @@ Aplicação web fictícia desenvolvida com o objetivo de compor portfólio e dem
 * **CSS3**
 * **JavaScript (ES6)**
 * **LocalStorage** para persistência do tema
-* **Netlify** para hospedagem
+* **Github Pages** para hospedagem
 
 ---
 
